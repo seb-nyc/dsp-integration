@@ -1425,7 +1425,7 @@ body {
     background: var(--card-bg);
     border-radius: 15px;
     padding: 2rem;
-    padding-top: 3.5rem; /* Extra padding to accommodate the number */
+    padding-top: 4rem; /* Extra padding to accommodate the number */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
@@ -1446,7 +1446,7 @@ body {
 
 .deliverable-number {
     position: absolute;
-    top: 0px;
+    top: 10px;
     left: 2rem;
     width: 40px;
     height: 40px;
