@@ -747,25 +747,6 @@ body {
 }
 
 .overview-card p::-webkit-scrollbar {
-    width: 6px;
-}
-
-.overview-card p::-webkit-scrollbar-track {
-    background: #f8fafc;
-    border-radius: 3px;
-}
-
-.overview-card p::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 3px;
-    transition: background 0.2s ease;
-}
-
-.overview-card p::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
-}
-
-.overview-card p::-webkit-scrollbar {
     width: 4px;
 }
 
@@ -1586,24 +1567,59 @@ body {
 
 .risk-detail, .mitigation-detail {
     margin-bottom: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .risk-detail h4 {
     color: #ef4444;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    flex-shrink: 0;
 }
 
 .mitigation-detail h4 {
     color: #22c55e;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    flex-shrink: 0;
 }
 
 .risk-detail p, .mitigation-detail p {
     color: var(--text-secondary);
     line-height: 1.6;
     font-size: 0.9rem;
+    flex: 1;
+    overflow-y: auto;
+    max-height: 200px;
+    /* Firefox scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+    /* Webkit scrollbar styling for other browsers */
+}
+
+.risk-detail p::-webkit-scrollbar,
+.mitigation-detail p::-webkit-scrollbar {
+    width: 4px;
+}
+
+.risk-detail p::-webkit-scrollbar-track,
+.mitigation-detail p::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 2px;
+}
+
+.risk-detail p::-webkit-scrollbar-thumb,
+.mitigation-detail p::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.risk-detail p::-webkit-scrollbar-thumb:hover,
+.mitigation-detail p::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
 }
 
 /* Lessons */
