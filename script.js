@@ -707,10 +707,10 @@ function exportToPDF(sectionId, filename) {
   button.innerHTML = '<i class="fas fa-spinner"></i> Downloading...';
 
   try {
-    // Create a simple download link for the slides file
+    // Create a simple download link for the DSP Integration Framework PDF
     const link = document.createElement("a");
-    link.href = "slides"; // Downloads a file named "slides"
-    link.download = "slides";
+    link.href = "DSP Integration Framework.pdf"; // Downloads the PDF file
+    link.download = "DSP Integration Framework.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
