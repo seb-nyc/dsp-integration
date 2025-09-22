@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSP Integration Framework</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#overview" class="nav-link">Overview</a></li>
+                <li><a href="#stakeholders" class="nav-link">Stakeholders</a></li>
+                <li><a href="#integration-stages" class="nav-link">Integration Stages</a></li>
+                <li><a href="#tools-technologies" class="nav-link">Tools & Technologies</a></li>
+                <li><a href="#deliverables" class="nav-link">Deliverables</a></li>
+                <li><a href="#risk-management" class="nav-link">Risk Management</a></li>
+                <li><a href="#lessons-experience" class="nav-link">Lessons & Experience</a></li>
+                <li class="nav-theme-toggle">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">DSP Integration Framework</h1>
+            <p class="hero-subtitle">Framework for Programmatic Advertising (openRTB) Integrations</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>2 Months</h3>
+                    <p>Integration Timeline</p>
+                </div>
+                <div class="stat">
+                    <h3>8 Stages</h3>
+                    <p>Process Phases</p>
+                </div>
+            </div>
+            <div class="hero-export">
+                <button class="export-btn export-full" onclick="exportToPDF('full-portfolio', 'DSP Integration - Complete Portfolio')">
+                    <i class="fas fa-download"></i>
+                    Export Complete Framework
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Overview</h2>
+            </div>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Objective</h3>
+                    <p>Set up a new DSP partner integration so clients can use the DSP as a demand source across deal ID-based and open exchange inventory within 2 months.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Stakeholder Collaboration</h3>
+                    <p>Cross-functional collaboration across multiple internal teams and external partners to ensure successful integration and smooth operations.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Technical Approach</h3>
+                    <p>8-stage process from initial validation through ongoing support, ensuring robust, scalable execution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Roadmap -->
+    <section id="integration-stages" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Integration Roadmap</h2>
+            </div>
+            <p class="section-subtitle">8-stage approach spanning 2 months, from initial validation to ongoing support</p>
+            <div class="interaction-hint">
+                <i class="fas fa-hand-pointer"></i>
+                <span>Click on any stage below to explore detailed information</span>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-stage="1">
+                    <div class="timeline-marker">
+                        <div class="marker-number">1</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="click-indicator">
+                            <i class="fas fa-hand-pointer"></i>
+                        </div>
+                        <h3>Pre-Check</h3>
+                        <span class="duration">2 Days</span>
+                        <p>Contract validation, credit checks, campaign pipeline assessment</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-stage="2">
+                    <div class="timeline-marker">
+                        <div class="marker-number">2</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="click-indicator">
+                            <i class="fas fa-hand-pointer"></i>
+                        </div>
+                        <h3>Scoping</h3>
+                        <span class="duration">1 Week</span>
+                        <p>Technical requirements gathering, API alignment, test plan creation</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-stage="3">
+                    <div class="timeline-marker">
+                        <div class="marker-number">3</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="click-indicator">
+                            <i class="fas fa-hand-pointer"></i>
+                        </div>
+                        <h3>Initial Setup</h3>
+                        <span class="duration">2 Weeks</span>
+                        <p>Bidder endpoint setup, buyer adapter development, basic connectivity testing</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-stage="4">
+                    <div class="timeline-marker">
+                        <div class="marker-number">4</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="click-indicator">
+                            <i class="fas fa-hand-pointer"></i>
+                        </div>
+                        <h3>Basic Transaction Workflow</h3>
+                        <span class="duration">1 Week</span>
+                        <p>End-to-end transaction testing, impression/spend validation</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-stage="5">
+                    <div class="timeline-marker">
+                        <div class="marker-number">5</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="click-indicator">
+                            <i class="fas fa-hand-pointer"></i>
+                        </div>
+                        <h3>Detailed Test Scenarios</h3>
+                        <span class="duration">2 Weeks</span>
+                        <p>Comprehensive testing of targeting, deals, and edge cases</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-stage="6">
+                    <div class="timeline-marker">
+                        <div class="marker-number">6</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="click-indicator">
+                            <i class="fas fa-hand-pointer"></i>
+                        </div>
+                        <h3>Limited Live Traffic</h3>
+                        <span class="duration">1 Week</span>
+                        <p>Production environment validation with pilot campaigns</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-stage="7">
+                    <div class="timeline-marker">
+                        <div class="marker-number">7</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="click-indicator">
+                            <i class="fas fa-hand-pointer"></i>
+                        </div>
+                        <h3>Go-Live</h3>
+                        <span class="duration">3 Days</span>
+                        <p>Gradual scaling, organization-wide rollout</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-stage="8">
+                    <div class="timeline-marker">
+                        <div class="marker-number">8</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="click-indicator">
+                            <i class="fas fa-hand-pointer"></i>
+                        </div>
+                        <h3>Ongoing Support</h3>
+                        <span class="duration">Continuous</span>
+                        <p>Monitoring, billing reconciliation, performance optimization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stakeholders Section -->
+    <section id="stakeholders" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Stakeholder Ecosystem</h2>
+            </div>
+            <p class="section-subtitle">Integration success depends on working closely with internal teams and external partners</p>
+            
+            <div class="stakeholders-tabs">
+                <button class="tab-button active" data-tab="internal">Internal Stakeholders</button>
+                <button class="tab-button" data-tab="external">External Stakeholders</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="internal" class="tab-pane active">
+                    <div class="stakeholders-grid">
+                        <div class="stakeholder-card">
+                            <div class="stakeholder-icon">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <h3>Legal & Finance</h3>
+                            <p>Contract execution, credit checks, billing alignment, and privacy compliance to establish proper business foundation.</p>
+                        </div>
+
+                        <div class="stakeholder-card">
+                            <div class="stakeholder-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>AdOps</h3>
+                            <p>Campaign setup, trafficking, and performance monitoring for successful campaigns.</p>
+                        </div>
+
+                        <div class="stakeholder-card">
+                            <div class="stakeholder-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3>Customer Success</h3>
+                            <p>Post-launch support and optimization to help clients succeed.</p>
+                        </div>
+
+                        <div class="stakeholder-card">
+                            <div class="stakeholder-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h3>Sales & Account Management</h3>
+                            <p>Campaign requirements gathering, client expectations management, and revenue planning.</p>
+                        </div>
+
+                        <div class="stakeholder-card">
+                            <div class="stakeholder-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>Supply Partnerships</h3>
+                            <p>Publisher coordination and inventory management to provide access to quality supply.</p>
+                        </div>
+
+                        <div class="stakeholder-card">
+                            <div class="stakeholder-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Data Team</h3>
+                            <p>Setting up and maintaining data feeds, including resolved MAIDs pushed to DSP seats.</p>
+                        </div>
+
+                        <div class="stakeholder-card">
+                            <div class="stakeholder-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Product & Engineering</h3>
+                            <p>Buyer adapter development and technical implementation for seamless integration.</p>
+                        </div>
+
+                        <div class="stakeholder-card">
+                            <div class="stakeholder-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3>Knowledge Management</h3>
+                            <p>Documentation creation and training materials development for team support.</p>
+                        </div>
+
+                        <div class="stakeholder-card">
+                            <div class="stakeholder-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h3>Marketing</h3>
+                            <p>Press release coordination, website updates, and newsletter communications.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="external" class="tab-pane">
+                    <div class="external-stakeholders">
+                        <div class="stakeholder-category">
+                            <h3>DSP Partners</h3>
+                            <div class="stakeholder-cards">
+                                <div class="stakeholder-card">
+                                    <div class="stakeholder-icon">
+                                        <i class="fas fa-wrench"></i>
+                                    </div>
+                                    <h4>Technical & Product Teams</h4>
+                                    <p>Integration implementation, testing, troubleshooting, and roadmap management.</p>
+                                </div>
+
+                                <div class="stakeholder-card">
+                                    <div class="stakeholder-icon">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <h4>Commercial Teams</h4>
+                                    <p>Business requirements definition and deal structure negotiations.</p>
+                                </div>
+
+                                <div class="stakeholder-card">
+                                    <div class="stakeholder-icon">
+                                        <i class="fas fa-bullhorn"></i>
+                                    </div>
+                                    <h4>Marketing Teams</h4>
+                                    <p>Joint press releases and DSP partner documentation development.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stakeholder-category">
+                            <h3>Ecosystem Partners</h3>
+                            <div class="stakeholder-cards">
+                                <div class="stakeholder-card">
+                                    <div class="stakeholder-icon">
+                                        <i class="fas fa-newspaper"></i>
+                                    </div>
+                                    <h4>Publisher Partners</h4>
+                                    <p>Deal setup, inventory access for pilot campaigns, and sales relationship coordination.</p>
+                                </div>
+
+                                <div class="stakeholder-card">
+                                    <div class="stakeholder-icon">
+                                        <i class="fas fa-puzzle-piece"></i>
+                                    </div>
+                                    <h4>Third Parties</h4>
+                                    <p>Data partners like LiveRamp and creative specialists for additional capabilities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Technologies -->
+    <section id="tools-technologies" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Essential Tools & Technologies</h2>
+            </div>
+            <p class="section-subtitle">Tools for communication, testing, monitoring, and development</p>
+            
+            <div class="tools-grid">
+                <div class="tool-category">
+                    <div class="tool-category-header">
+                        <div class="tool-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Communication & Project Management</h3>
+                    </div>
+                    <ul class="tool-list">
+                        <li><strong>Slack channels:</strong> Real-time troubleshooting and team coordination</li>
+                        <li><strong>JIRA:</strong> Task tracking and project management</li>
+                        <li><strong>Confluence:</strong> Documentation and knowledge sharing</li>
+                    </ul>
+                </div>
+
+                <div class="tool-category">
+                    <div class="tool-category-header">
+                        <div class="tool-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Testing & Validation</h3>
+                    </div>
+                    <ul class="tool-list">
+                        <li><strong>Postman:</strong> API automation and testing</li>
+                        <li><strong>Bid response validator:</strong> JSON parsing and validation</li>
+                        <li><strong>VAST validator:</strong> Creative compliance checking</li>
+                        <li><strong>Traffic simulator:</strong> End-to-end testing scenarios</li>
+                    </ul>
+                </div>
+
+                <div class="tool-category">
+                    <div class="tool-category-header">
+                        <div class="tool-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Monitoring & Analytics</h3>
+                    </div>
+                    <ul class="tool-list">
+                        <li><strong>Datadog/Grafana:</strong> Real-time performance monitoring</li>
+                        <li><strong>Looker/Tableau:</strong> Business intelligence and reporting</li>
+                        <li><strong>SQL dashboards:</strong> Custom DSP-specific metrics</li>
+                    </ul>
+                </div>
+
+                <div class="tool-category">
+                    <div class="tool-category-header">
+                        <div class="tool-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Development Support</h3>
+                    </div>
+                    <ul class="tool-list">
+                        <li><strong>GitHub/VSCode:</strong> Configuration management and version control</li>
+                        <li><strong>TestRail/GDrive:</strong> Test report storage and documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deliverables Section -->
+    <section id="deliverables" class="section">
+        <div class="container">
+            <h2 class="section-title">Project Deliverables</h2>
+            <p class="section-subtitle">Key outputs that set the foundation and ensure smooth operations</p>
+            
+            <div class="deliverables-tabs">
+                <button class="tab-button active" data-tab="early">Early Stage Deliverables</button>
+                <button class="tab-button" data-tab="advanced">Advanced Stage Deliverables</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="early" class="tab-pane active">
+                    <div class="deliverables-grid">
+                        <div class="deliverable-card">
+                            <div class="deliverable-number">01</div>
+                            <h3>Pre-Check Deliverables</h3>
+                            <ul>
+                                <li>Signed off paperwork and legal documentation</li>
+                                <li>Campaign pipeline assessment with launch requirements</li>
+                                <li>Credit check validation and financial clearance</li>
+                            </ul>
+                        </div>
+
+                        <div class="deliverable-card">
+                            <div class="deliverable-number">02</div>
+                            <h3>Scoping Deliverables</h3>
+                            <ul>
+                                <li>Sample bid response from DSP for technical validation</li>
+                                <li>Completed integration questionnaire with technical specifications</li>
+                                <li>Technical documentation review from DSP client</li>
+                                <li>Comprehensive list of DSP contacts across all teams</li>
+                                <li>Test plan based on DSP capabilities and requirements</li>
+                                <li>Screenshots/screen recordings of DSP deal and campaign setup process</li>
+                            </ul>
+                        </div>
+
+                        <div class="deliverable-card">
+                            <div class="deliverable-number">03</div>
+                            <h3>Initial Setup Deliverables</h3>
+                            <ul>
+                                <li>Connectivity report with request volumes, HTTP status codes, and response times</li>
+                                <li>Successful test validation showing bid response meets DSP requirements</li>
+                                <li>Requirements documentation outlining buyer adapter support needs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="advanced" class="tab-pane">
+                    <div class="deliverables-grid">
+                        <div class="deliverable-card">
+                            <div class="deliverable-number">01</div>
+                            <h3>Basic Transaction Workflow</h3>
+                            <ul>
+                                <li>Test report showing minimal discrepancy between expected and actual results</li>
+                                <li>Impression target validation and spend reconciliation</li>
+                                <li>End-to-end transaction processing confirmation</li>
+                            </ul>
+                        </div>
+
+                        <div class="deliverable-card">
+                            <div class="deliverable-number">02</div>
+                            <h3>Detailed Test Scenarios</h3>
+                            <ul>
+                                <li>Comprehensive test reports for each scenario (pass/fail, total impressions, spend, bid rate)</li>
+                                <li>Completed test plan with all edge cases covered</li>
+                                <li>Updated DSP documentation reflecting tested capabilities</li>
+                            </ul>
+                        </div>
+
+                        <div class="deliverable-card">
+                            <div class="deliverable-number">03</div>
+                            <h3>Go-Live</h3>
+                            <ul>
+                                <li>DSP activation guides for internal teams</li>
+                                <li>Screenshots and documentation from DSP for deal and campaign setup processes</li>
+                                <li>Production rollout confirmation and performance validation</li>
+                            </ul>
+                        </div>
+
+                        <div class="deliverable-card">
+                            <div class="deliverable-number">04</div>
+                            <h3>Ongoing Support</h3>
+                            <ul>
+                                <li>Monitoring and alerting systems for DSP endpoints</li>
+                                <li>Comprehensive dashboard for DSP-level activity tracking</li>
+                                <li>Automated billing reconciliation processes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Management -->
+    <section id="risk-management" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Risk Management Framework</h2>
+            </div>
+            <p class="section-subtitle">Risk identification and mitigation strategies across all impact levels</p>
+            
+            <div class="risk-tabs">
+                <button class="tab-button active" data-tab="lower">Lower-Impact</button>
+                <button class="tab-button" data-tab="medium">Medium-Impact</button>
+                <button class="tab-button" data-tab="high">High-Impact</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="lower" class="tab-pane active">
+                    <div class="risk-intro">
+                        <p>Operational challenges that may extend timelines or create knowledge gaps, but have manageable business impact with proper planning.</p>
+                    </div>
+                    <div class="risk-grid">
+                        <div class="risk-card">
+                            <h3>Technical Discovery Issues</h3>
+                            <div class="risk-detail">
+                                <h4>Risk:</h4>
+                                <p>Unexpected technical requirements can extend the integration timeline beyond the 2-month target</p>
+                            </div>
+                            <div class="mitigation-detail">
+                                <h4>Mitigation:</h4>
+                                <p>Comprehensive integration questionnaire and thorough technical validation during scoping phase</p>
+                            </div>
+                        </div>
+
+                        <div class="risk-card">
+                            <h3>Knowledge Gaps</h3>
+                            <div class="risk-detail">
+                                <h4>Risk:</h4>
+                                <p>Integration is live but capabilities are not fully documented, leaving teams unsure how to push deals or advise on setup/activation</p>
+                            </div>
+                            <div class="mitigation-detail">
+                                <h4>Mitigation:</h4>
+                                <p>Robust documentation process, training materials creation, and knowledge transfer sessions with all stakeholder teams</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="medium" class="tab-pane">
+                    <div class="risk-intro">
+                        <p>Operational risks that could delay timelines or impact campaign performance, requiring proactive management and clear mitigation plans.</p>
+                    </div>
+                    <div class="risk-grid">
+                        <div class="risk-card">
+                            <h3>Engineering Resource Delays</h3>
+                            <div class="risk-detail">
+                                <h4>Risk:</h4>
+                                <p>Code changes compete with other priorities, potentially missing campaign launch deadlines and revenue targets</p>
+                            </div>
+                            <div class="mitigation-detail">
+                                <h4>Mitigation:</h4>
+                                <p>Early engineering alignment and clear business impact communication to prioritize resources</p>
+                            </div>
+                        </div>
+
+                        <div class="risk-card">
+                            <h3>Testing Scope Gaps</h3>
+                            <div class="risk-detail">
+                                <h4>Risk:</h4>
+                                <p>Missing edge cases can cause activation issues with high-value campaigns</p>
+                            </div>
+                            <div class="mitigation-detail">
+                                <h4>Mitigation:</h4>
+                                <p>Comprehensive scoping phase and detailed test plans based on DSP capabilities assessment</p>
+                            </div>
+                        </div>
+
+                        <div class="risk-card">
+                            <h3>Contract/Legal Delays</h3>
+                            <div class="risk-detail">
+                                <h4>Risk:</h4>
+                                <p>Incomplete paperwork prevents go-live, impacting revenue pipeline and client expectations</p>
+                            </div>
+                            <div class="mitigation-detail">
+                                <h4>Mitigation:</h4>
+                                <p>Front-load contract validation and credit checks in pre-check phase</p>
+                            </div>
+                        </div>
+
+                        <div class="risk-card">
+                            <h3>Commercial Handoff Gaps</h3>
+                            <div class="risk-detail">
+                                <h4>Risk:</h4>
+                                <p>Live integration with no clear account plan or commercial relationships prevents revenue generation</p>
+                            </div>
+                            <div class="mitigation-detail">
+                                <h4>Mitigation:</h4>
+                                <p>Establish clear commercial handoff process with account management and business development teams</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="high" class="tab-pane">
+                    <div class="risk-intro">
+                        <p>Critical risks that could significantly impact business operations and revenue, requiring immediate attention and robust mitigation strategies.</p>
+                    </div>
+                    <div class="risk-grid">
+                        <div class="risk-card">
+                            <h3>Billing Discrepancies</h3>
+                            <div class="risk-detail">
+                                <h4>Risk:</h4>
+                                <p>Significant financial losses when publishers expect full payment but DSP undercounts spend</p>
+                            </div>
+                            <div class="mitigation-detail">
+                                <h4>Mitigation:</h4>
+                                <p>Establish clear source of truth, implement automated daily reconciliation, require minimal spend discrepancies during testing phase</p>
+                            </div>
+                        </div>
+
+                        <div class="risk-card">
+                            <h3>DSP Infrastructure Impact</h3>
+                            <div class="risk-detail">
+                                <h4>Risk:</h4>
+                                <p>DSP returning excessive bids or misconfigured requests can degrade DSP platform performance, affecting all clients</p>
+                            </div>
+                            <div class="mitigation-detail">
+                                <h4>Mitigation:</h4>
+                                <p>Gradual QPS scaling with real-time monitoring, teams on standby for immediate rollback procedures</p>
+                            </div>
+                        </div>
+
+                        <div class="risk-card">
+                            <h3>DSP Endpoint Overwhelm</h3>
+                            <div class="risk-detail">
+                                <h4>Risk:</h4>
+                                <p>Scaling too quickly can crash DSP bidder, impacting their campaigns across all SSPs</p>
+                            </div>
+                            <div class="mitigation-detail">
+                                <h4>Mitigation:</h4>
+                                <p>Controlled traffic increase with comprehensive DSP performance monitoring and communication</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lessons & Experience -->
+    <section id="lessons-experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Lessons from Experience</h2>
+            </div>
+            <p class="section-subtitle">Key insights and best practices from previous DSP integrations</p>
+            
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Monitoring Excellence</h3>
+                    <p>Good monitoring is essential for early issue detection and resolution. Success requires actionable messaging, proper team training, and thorough documentation. Implementing DSP tier systems reduces noise and improves response times.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Commercial Context Matters</h3>
+                    <p>Integration approach must align with commercial strategy. Self-service SMB buyers have different needs and expectations compared to large HoldCo clients. Educating clients on programmatic possibilities can be challenging but is essential for success.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Documentation Drives Efficiency</h3>
+                    <p>Documenting pitfalls and edge cases significantly improves future integrations. Sharing detailed checklists with DSPs highlighting common issues has proven to accelerate development timelines and reduce troubleshooting cycles.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Integration Timing Strategy</h3>
+                    <p>Rolling additional API integrations into the main integration phase works better than bolt-on approaches later. DSPs are more engaged and have dedicated resources during integration, making it the optimal time for complete setup.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaborative Problem-Solving</h3>
+                    <p>Asking for help early in the process is crucial - team members may have encountered similar issues before. Using collective experience accelerates resolution and prevents repeated mistakes across integrations.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Automation Opportunities</h3>
+                    <p>Many tasks repeat across integrations, creating opportunities for templating and automation. Standardizing setup processes, deal creation, traffic management, and reconciliation with DSPs improves efficiency and reduces manual errors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DSP Integration Solutions</h3>
+                    <p>Delivering excellence in programmatic advertising integration through comprehensive planning, execution, and ongoing support.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#stakeholders">Stakeholders</a></li>
+                        <li><a href="#integration-stages">Integration Stages</a></li>
+                        <li><a href="#tools-technologies">Tools & Technologies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#deliverables">Deliverables</a></li>
+                        <li><a href="#risk-management">Risk Management</a></li>
+                        <li><a href="#lessons-experience">Lessons & Experience</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DSP Integration Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Phase Detail Modal -->
+    <div id="phaseModal" class="modal">
+        <div id="modalContent" class="modal-content">
+            <!-- Content will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
