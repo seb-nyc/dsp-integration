@@ -40,12 +40,63 @@
     box-sizing: border-box;
 }
 
+/* Performance optimizations */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize animations and transitions */
+.overview-card,
+.stakeholder-card,
+.tool-category,
+.deliverable-card,
+.risk-card,
+.lesson-card,
+.timeline-content,
+.timeline-item {
+    will-change: transform;
+}
+
+/* Optimize scroll performance */
+.overview-card p,
+.stakeholder-card p,
+.tool-list,
+.deliverable-card ul,
+.risk-detail p,
+.mitigation-detail p,
+.lesson-card p {
+    will-change: scroll-position;
+}
+
+/* CSS containment for better performance */
+.overview-card,
+.stakeholder-card,
+.tool-category,
+.deliverable-card,
+.risk-card,
+.lesson-card,
+.timeline-content {
+    contain: layout style paint;
+}
+
+/* Optimize modal performance */
+.modal {
+    contain: layout style paint;
+}
+
+.modal-content {
+    contain: layout style paint;
+}
+
 html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    /* Performance optimizations */
+    text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
 }
 

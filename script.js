@@ -1,3 +1,29 @@
+// Performance optimization utilities
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+function throttle(func, limit) {
+  let inThrottle;
+  return function () {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  };
+}
+
 // Phase Details Data
 const phaseDetails = {
   1: {
@@ -322,6 +348,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeMobileMenu();
   initializeScrollEffects();
   initializeThemeToggle();
+  initializeLazyLoading();
 });
 
 // Navigation functionality with improved browser compatibility
@@ -573,8 +600,8 @@ function initializeMobileMenu() {
 
 // Scroll effects
 function initializeScrollEffects() {
-  // Navbar background on scroll with theme support
-  window.addEventListener("scroll", function () {
+  // Navbar background on scroll with theme support - throttled for performance
+  const throttledScrollHandler = throttle(function () {
     const navbar = document.querySelector(".navbar");
 
     if (window.scrollY > 100) {
@@ -584,7 +611,9 @@ function initializeScrollEffects() {
       // Remove scrolled class
       navbar.classList.remove("scrolled");
     }
-  });
+  }, 16); // ~60fps
+
+  window.addEventListener("scroll", throttledScrollHandler, { passive: true });
 
   // Intersection Observer for animations
   const observerOptions = {
@@ -1120,15 +1149,17 @@ function initializeThemeToggle() {
   // Update icon based on current theme
   updateThemeIcon();
 
-  // Listen for theme toggle clicks
-  themeToggle.addEventListener("click", function () {
+  // Listen for theme toggle clicks - debounced for performance
+  const debouncedThemeToggle = debounce(function () {
     const currentTheme = document.documentElement.getAttribute("data-theme");
     const newTheme = currentTheme === "dark" ? "light" : "dark";
 
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
     updateThemeIcon();
-  });
+  }, 100);
+
+  themeToggle.addEventListener("click", debouncedThemeToggle);
 
   // Listen for system theme changes
   window
@@ -1150,4 +1181,40 @@ function initializeThemeToggle() {
       themeIcon.className = "fas fa-moon";
     }
   }
+}
+
+// Lazy loading for images and performance optimization
+function initializeLazyLoading() {
+  // Lazy load images if any are added in the future
+  if ("IntersectionObserver" in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove("lazy");
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+
+    // Observe all images with lazy class
+    document.querySelectorAll("img[data-src]").forEach((img) => {
+      imageObserver.observe(img);
+    });
+  }
+
+  // Preload critical resources
+  const criticalResources = [
+    "styles.css",
+    "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap",
+  ];
+
+  criticalResources.forEach((resource) => {
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.href = resource;
+    link.as = resource.endsWith(".css") ? "style" : "style";
+    document.head.appendChild(link);
+  });
 }
