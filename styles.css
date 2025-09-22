@@ -907,8 +907,8 @@ body {
 
 .click-indicator {
     position: absolute;
-    top: -8px;
-    right: -8px;
+    top: 8px;
+    right: 8px;
     width: 24px;
     height: 24px;
     background: #2563eb;
@@ -1373,11 +1373,11 @@ body {
 .tool-category h3 {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: white;
     /* Visual separation from content */
     margin-bottom: 1rem;
     padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     position: relative;
 }
 
@@ -1418,13 +1418,14 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    overflow: visible; /* Ensure numbers are not clipped */
 }
 
 .deliverable-card {
     background: var(--card-bg);
     border-radius: 15px;
     padding: 2rem;
-    padding-top: 3rem; /* Extra padding to accommodate the number */
+    padding-top: 3.5rem; /* Extra padding to accommodate the number */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
@@ -1435,6 +1436,7 @@ body {
     /* Firefox-specific fixes */
     min-height: 370px;
     box-sizing: border-box;
+    margin-top: 30px; /* Increased margin to prevent clipping */
 }
 
 .deliverable-card:hover {
@@ -1444,7 +1446,7 @@ body {
 
 .deliverable-number {
     position: absolute;
-    top: -20px;
+    top: 0px;
     left: 2rem;
     width: 40px;
     height: 40px;
