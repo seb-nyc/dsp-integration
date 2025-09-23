@@ -704,19 +704,15 @@ function exportToPDF(sectionId, filename) {
 
   // Show loading state
   button.classList.add("loading");
-  button.innerHTML = '<i class="fas fa-spinner"></i> Downloading...';
+  button.innerHTML = '<i class="fas fa-spinner"></i> Opening...';
 
   try {
-    // Create a simple download link for the DSP Integration Framework PDF
-    const link = document.createElement("a");
-    link.href = "DSP Integration Framework.pdf"; // Downloads the PDF file
-    link.download = "DSP Integration Framework.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Open PDF in a new tab
+    const pdfUrl = "DSP Integration Framework.pdf";
+    window.open(pdfUrl, "_blank");
   } catch (error) {
-    console.error("Error downloading file:", error);
-    alert("Error downloading file. Please try again.");
+    console.error("Error opening file:", error);
+    alert("Error opening file. Please try again.");
   } finally {
     // Reset button
     button.classList.remove("loading");
