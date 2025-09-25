@@ -1,6 +1,6 @@
 # DSP Integration Framework
 
-A comprehensive presentation of DSP (Demand-Side Platform) integration solutions engineering expertise.
+A presentation of a DSP (Demand-Side Platform) integration framework, aiming for a 2-month turnaround from onboarding to live traffic.
 
 ## What It Is
 
